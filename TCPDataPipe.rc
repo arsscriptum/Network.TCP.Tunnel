@@ -1,0 +1,242 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_TCPDATAPIPE         ICON    DISCARDABLE     "TCPDataPipe.ico"
+IDI_SMALL               ICON    DISCARDABLE     "small.ico"
+IDI_KEY                 ICON    DISCARDABLE     "key.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_TCPDATAPIPE MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Client Configuration...",    IDM_CLIENTCONFIG
+        MENUITEM "&Server Configuration...",    IDM_SERVERCONFIG
+        MENUITEM "R&estart Service",            IDM_RESTARTSERVICE
+        MENUITEM "&Install Service",            IDM_INSTALLSERVICE
+        MENUITEM "&Remove Service",             IDM_DELETESERVICE
+        MENUITEM "Minimize To &Tray",           IDM_SYSTRAY
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_TCPDATAPIPE ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "/",            IDM_CLIENTCONFIG,       ASCII,  ALT, NOINVERT
+    "?",            IDM_CLIENTCONFIG,       ASCII,  ALT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CLIENTCONFIG DIALOGEX 22, 17, 240, 125
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "Client Configuration"
+FONT 8, "System"
+BEGIN
+    ICON            IDI_TCPDATAPIPE,IDC_MYICON,6,8,20,20
+    DEFPUSHBUTTON   "OK",IDOK,203,7,30,11,WS_GROUP
+    RTEXT           "Key:",IDC_STATIC,53,11,16,8
+    EDITTEXT        IDC_EDITKEY,72,10,120,10,ES_AUTOHSCROLL
+    RTEXT           "Password:",IDC_STATIC,34,27,35,8
+    EDITTEXT        IDC_EDITPASS,72,26,120,10,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "Local Interface:",IDC_STATIC,18,43,51,8
+    EDITTEXT        IDC_EDITLOCALIPADDR,72,42,60,10,ES_AUTOHSCROLL
+    CTEXT           ":",IDC_STATIC,132,43,8,8
+    EDITTEXT        IDC_EDITLOCALPORT,140,42,52,10,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "Forwarded Port:",IDC_STATIC,17,59,52,8
+    EDITTEXT        IDC_EDITREMOTEPORT,72,58,120,10,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "Remote Server:",IDC_STATIC,17,75,52,8
+    EDITTEXT        IDC_EDITREMOTEIPADDR,72,74,60,10,ES_AUTOHSCROLL
+    CTEXT           ":",IDC_STATIC,132,75,8,8
+    EDITTEXT        IDC_EDITREMOTEIPPORT,140,74,52,10,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    RTEXT           "Idle Timeout:",IDC_STATIC,26,91,43,8
+    EDITTEXT        IDC_EDITTIMEOUT,72,90,60,10,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "(minutes)",IDC_STATIC,140,90,31,8
+    CONTROL         "Password Prompt:",IDC_CHECKPASS,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,3,106,75,10,
+                    WS_EX_RIGHT
+    CONTROL         "Reconnect On Loss:",IDC_CHECKRECONNECT,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,111,106,81,10,
+                    WS_EX_RIGHT
+END
+
+IDD_PASSWORDPROMPT1 DIALOG DISCARDABLE  22, 17, 195, 50
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | 
+    WS_CAPTION
+CAPTION "Enter Password"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    ICON            IDI_TCPDATAPIPE,IDC_MYICON,7,7,20,20
+    LTEXT           "Password:",IDC_STATIC,41,11,35,8
+    EDITTEXT        IDC_EDITPASS,83,10,103,12,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,102,31,40,13,WS_GROUP
+    PUSHBUTTON      "Cancel",IDCANCEL,147,31,40,13
+END
+
+IDD_PASSWORDPROMPT2 DIALOG DISCARDABLE  22, 17, 219, 110
+STYLE DS_SYSMODAL | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | 
+    WS_CAPTION
+CAPTION "Enter Password"
+FONT 8, "Microsoft Sans Serif"
+BEGIN
+    ICON            IDI_TCPDATAPIPE,IDC_MYICON,7,5,20,20
+    LTEXT           "Password:",IDC_STATIC,14,56,35,8
+    EDITTEXT        IDC_EDITPASS,55,54,151,12,ES_PASSWORD | ES_AUTOHSCROLL
+    CONTROL         "Remember password (this connection)",IDC_CHECKPASS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,55,70,136,10
+    DEFPUSHBUTTON   "OK",IDOK,128,91,40,13,WS_GROUP
+    PUSHBUTTON      "Cancel",IDCANCEL,173,91,40,13
+    EDITTEXT        IDC_MESSAGE,39,8,171,18,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER | NOT WS_TABSTOP
+    GROUPBOX        " Logon ",IDC_STATIC,7,29,206,57
+    LTEXT           "Server:",IDC_STATIC,14,40,24,8
+    EDITTEXT        IDC_EDITREMOTEIPADDR,55,38,81,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    CTEXT           ":",IDC_STATIC,137,40,8,8
+    EDITTEXT        IDC_EDITREMOTEIPPORT,145,38,26,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CTEXT           "-",IDC_STATIC,172,40,8,8
+    EDITTEXT        IDC_EDITREMOTEPORT,180,38,26,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+END
+
+IDD_SERVERCONFIG DIALOGEX 22, 17, 240, 110
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+CAPTION "Server Configuration"
+FONT 8, "System", 0, 0, 0x1
+BEGIN
+    ICON            IDI_TCPDATAPIPE,IDC_MYICON,6,8,20,20
+    DEFPUSHBUTTON   "OK",IDOK,203,9,30,11,WS_GROUP
+    RTEXT           "Keys:",IDC_KEYLABEL,27,11,42,8
+    COMBOBOX        IDC_LISTKEY,72,9,88,30,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Remove",IDC_REMOVEKEY,162,9,30,12
+    EDITTEXT        IDC_EDITKEY,72,27,78,10,ES_AUTOHSCROLL
+    PUSHBUTTON      "",IDC_GENKEY,150,27,10,10,BS_ICON
+    PUSHBUTTON      "Add",IDC_ADDKEY,162,27,30,10
+    LTEXT           "Interface:",IDC_STATIC,38,44,31,8
+    EDITTEXT        IDC_EDITREMOTEIPADDR,72,43,60,10,ES_AUTOHSCROLL
+    CTEXT           ":",IDC_STATIC,132,44,8,8
+    EDITTEXT        IDC_EDITREMOTEIPPORT,140,43,52,10,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "Destination:",IDC_STATIC,29,60,40,8
+    EDITTEXT        IDC_EDITDESTIPADDR,72,59,60,10,ES_AUTOHSCROLL
+    CTEXT           ":",IDC_STATIC,132,60,8,8
+    LTEXT           "",IDC_STATIC,140,59,52,10,NOT WS_GROUP,WS_EX_STATICEDGE
+    RTEXT           "Service Name:",IDC_STATIC,20,76,49,8
+    EDITTEXT        IDC_EDITSVCNAME,72,75,120,10,ES_AUTOHSCROLL
+    CONTROL         "Use IP Blacklist:",IDC_CHECKBLACKLIST,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,8,92,70,10,
+                    WS_EX_RIGHT
+    RTEXT           "Idle Timeout:",IDC_STATIC,94,92,43,8
+    EDITTEXT        IDC_EDITTIMEOUT,140,91,52,10,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "(minutes)",IDC_STATIC,196,91,31,8
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#include ""TCPDataPipe.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APP_TITLE           "TCP Tunnel"
+    IDC_TCPDATAPIPE         "TCPTUNNELAPPLICATION"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#include "TCPDataPipe.rc2"  // non-Microsoft Visual C++ edited resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
